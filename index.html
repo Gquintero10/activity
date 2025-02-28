@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Registros Médicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Botón de cerrar sesión -->
+    <button id="logout-btn" class="hidden logout-btn">Cerrar Sesión</button>
+
+    <div id="login-section">
+        <h1>Iniciar Sesión</h1>
+        <form id="login-form">
+            <label for="role">Rol:</label>
+            <select id="role">
+                <option value="paciente">Paciente</option>
+                <option value="doctor">Doctor</option>
+                <option value="secretaria">Secretaria</option>
+            </select>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <button id="show-register">Registrarse</button>
+    </div>
+
+    <div id="register-section" class="hidden">
+        <h1>Registrarse</h1>
+        <form id="register-form">
+            <label for="register-role">Rol:</label>
+            <select id="register-role">
+                <option value="paciente">Paciente</option>
+                <option value="doctor">Doctor</option>
+                <option value="secretaria">Secretaria</option>
+            </select>
+            <label for="register-username">Usuario:</label>
+            <input type="text" id="register-username" required>
+            <label for="register-password">Contraseña:</label>
+            <input type="password" id="register-password" required>
+            <div id="especialidad-field" class="hidden">
+                <label for="especialidad">Especialidad:</label>
+                <select id="especialidad">
+                    <option value="cardiología">Cardiología</option>
+                    <option value="dermatología">Dermatología</option>
+                    <option value="gastroenterología">Gastroenterología</option>
+                </select>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+        <button id="show-login">Volver al Login</button>
+    </div>
+
+    <div id="paciente-section" class="hidden">
+        <h2>Paciente</h2>
+        <form id="molestias-form">
+            <label for="especialidad-paciente">Especialidad requerida:</label>
+            <select id="especialidad-paciente">
+                <option value="cardiología">Cardiología</option>
+                <option value="dermatología">Dermatología</option>
+                <option value="gastroenterología">Gastroenterología</option>
+            </select>
+            <label for="explicacion">Explica tus dolencias:</label>
+            <textarea id="explicacion" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="receta-paciente" class="hidden">
+            <h3>Receta Médica</h3>
+            <p id="receta-texto"></p>
+        </div>
+    </div>
+
+    <div id="doctor-section" class="hidden">
+        <h2>Doctor</h2>
+        <div id="lista-pacientes"></div>
+        <form id="receta-form" class="hidden">
+            <label for="receta">Receta médica:</label>
+            <textarea id="receta" required></textarea>
+            <button type="submit">Enviar Receta</button>
+        </form>
+    </div>
+
+    <div id="secretaria-section" class="hidden">
+        <h2>Secretaria</h2>
+        <div id="lista-recetas"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
